@@ -127,7 +127,7 @@ export default function Solutions() {
                 ))}
               </ul>
 
-              <a href="#pricing" className="btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
+              <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
                 See Legal Pricing
               </a>
             </div>
@@ -201,7 +201,7 @@ export default function Solutions() {
                 ))}
               </ul>
 
-              <a href="#pricing" className="btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
+              <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
                 See Local Pricing
               </a>
             </div>

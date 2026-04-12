@@ -66,10 +66,10 @@ export default function FinalCTA() {
 
           {/* CTA buttons */}
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 56 }}>
-            <a href="#calculator" className="btn-gold" style={{ fontSize: 16, padding: '18px 40px' }}>
+            <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: 16, padding: '18px 40px' }}>
               Start Free Trial — No Card Needed
             </a>
-            <a href="#how-it-works" className="btn-outline" style={{ fontSize: 16, padding: '18px 40px' }}>
+            <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ fontSize: 16, padding: '18px 40px' }}>
               Schedule a Demo
             </a>
           </div>

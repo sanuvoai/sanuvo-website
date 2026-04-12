@@ -92,10 +92,10 @@ export default function Hero() {
           display: 'flex', gap: 16, justifyContent: 'center',
           flexWrap: 'wrap', marginTop: 44,
         }}>
-          <a href="#calculator" className="btn-gold" style={{ fontSize: 15, padding: '16px 32px' }}>
+          <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: 15, padding: '16px 32px' }}>
             See Your Revenue Gap
           </a>
-          <a href="#how-it-works" className="btn-outline" style={{ fontSize: 15, padding: '16px 32px' }}>
+          <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ fontSize: 15, padding: '16px 32px' }}>
             ▶ Watch Live Demo
           </a>
         </div>

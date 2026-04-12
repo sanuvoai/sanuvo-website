@@ -60,7 +60,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop CTA */}
-      <a href="#calculator" className="btn-gold hide-mobile" style={{ padding: '10px 20px', fontSize: 13 }}>
+      <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold hide-mobile" style={{ padding: '10px 20px', fontSize: 13 }}>
         Calculate Your Revenue Gap
       </a>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#calculator" className="btn-gold" onClick={() => setOpen(false)}
+          <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold" onClick={() => setOpen(false)}
             style={{ padding: '12px 20px', fontSize: 14, marginTop: 8 }}>
             Calculate Your Revenue Gap
           </a>

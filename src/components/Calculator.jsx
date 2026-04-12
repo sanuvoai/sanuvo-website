@@ -209,7 +209,7 @@ export default function Calculator() {
               </div>
             </div>
 
-            <a href="#pricing" className="btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
+            <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
               Recover This Revenue — Starting Today
             </a>
           </div>

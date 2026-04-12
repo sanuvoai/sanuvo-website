@@ -124,7 +124,7 @@ export default function Pricing() {
           </p>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#334155' }}>
             Need a custom plan?{' '}
-            <a href="#contact" style={{ color: '#C9A227', textDecoration: 'none' }}>
+            <a href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer" style={{ color: '#C9A227', textDecoration: 'none' }}>
               Talk to us →
             </a>
           </p>
@@ -220,7 +220,7 @@ function PricingCard({ plan, delay }) {
         </ul>
 
         <a
-          href="#contact"
+          href="https://calendly.com/sanuvo-ai" target="_blank" rel="noopener noreferrer"
           className={plan.ctaStyle === 'gold' ? 'btn-gold' : 'btn-outline'}
           style={{ width: '100%', justifyContent: 'center' }}
         >

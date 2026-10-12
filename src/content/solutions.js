@@ -1,0 +1,216 @@
+// Single source of truth for the eight solution areas. Drives the nav menu, home grid,
+// solutions index, solution pages, footer and page metadata.
+//
+// Copy rule: describe what an engagement can cover and what it is designed to improve.
+// Never state that a capability is live, turnkey, or deliverable on a fixed timeline,
+// and never name specific ERPs, certifications, or customer results.
+
+export const SOLUTIONS = [
+  {
+    slug: 'journal-entry-ops',
+    name: 'Journal Entry Ops',
+    icon: 'journal',
+    tagline: 'Prepare, approve, track, and export journal entries in one controlled workflow.',
+    headline: 'Journal entries, from preparation to ERP-ready export',
+    intro: 'Replace scattered spreadsheets and email approvals with a single controlled queue for journal entries, configured around your entities, approvers, and export requirements.',
+    problems: [
+      'Entries are prepared in one file, approved in an email thread, and re-keyed for the ledger.',
+      'Nobody has a single view of what is drafted, in review, approved, or exported.',
+      'Support and approval history are hard to find when someone asks for them later.',
+    ],
+    scope: [
+      { title: 'Preparation',       desc: 'Prepare entries in a consistent structure instead of one-off files.' },
+      { title: 'Approvals',         desc: 'Route entries for review and see exactly what is waiting on whom.' },
+      { title: 'Tracking',          desc: 'Follow each entry from draft to approved to exported.' },
+      { title: 'ERP-ready exports', desc: 'Produce export files prepared for upload to your ledger system.' },
+    ],
+    note: 'Exports are file-based. You upload them through your ledger system\'s own import process.',
+    outcomes: [
+      { title: 'Financial control',   desc: 'Entries pass through a defined review before they leave for the ledger.' },
+      { title: 'Less manual work',    desc: 'Less re-keying and chasing between preparation, approval, and posting.' },
+      { title: 'Visibility',          desc: 'One queue shows what is open, who owns it, and what is ready.' },
+    ],
+    related: ['close-ops', 'reconciliation-ops', 'audit-controls'],
+  },
+  {
+    slug: 'reconciliation-ops',
+    name: 'Reconciliation Ops',
+    icon: 'match',
+    tagline: 'Match bank activity to the ledger and focus reviewers on what does not tie out.',
+    headline: 'Match the routine. Review the exceptions.',
+    intro: 'Bring bank activity and the general ledger side by side, so reviewers spend their time on the items that need judgment rather than on ticking and tying.',
+    problems: [
+      'Reconciliations are worked line by line in spreadsheets every period.',
+      'Near matches and timing differences take as long as genuine errors.',
+      'Open items carry forward without a clear owner or resolution.',
+    ],
+    scope: [
+      { title: 'Bank-to-GL matching',  desc: 'Match bank transactions against general ledger entries.' },
+      { title: 'Potential matches',    desc: 'Surface near matches for a reviewer to confirm or reject.' },
+      { title: 'Unmatched items',      desc: 'See what has no counterpart on either side.' },
+      { title: 'Exception management', desc: 'Track differences through review to resolution.' },
+    ],
+    outcomes: [
+      { title: 'Financial control',      desc: 'Differences are surfaced and owned instead of sitting in a worksheet tab.' },
+      { title: 'Operational efficiency', desc: 'Reviewer time goes to exceptions, not routine matches.' },
+      { title: 'Visibility',             desc: 'A clear count of what is matched, pending, and unresolved.' },
+    ],
+    related: ['cash-application-ops', 'close-ops', 'journal-entry-ops'],
+  },
+  {
+    slug: 'cashflow-ops',
+    name: 'Cashflow Ops',
+    icon: 'cash',
+    tagline: 'See where cash stands across entities and where it is heading.',
+    headline: 'See where cash stands and where it is heading',
+    intro: 'Give finance leadership a current view of cash across accounts and entities, and a forecast to plan against.',
+    problems: [
+      'Cash positions are assembled by hand from bank portals and entity-level files.',
+      'The forecast is out of date by the time leadership sees it.',
+      'Comparing scenarios means rebuilding the spreadsheet.',
+    ],
+    scope: [
+      { title: 'Cash visibility',   desc: 'View cash position across accounts and entities in one place.' },
+      { title: 'Forecasting',       desc: 'Project cash forward from expected inflows and outflows.' },
+      { title: 'Scenario analysis', desc: 'Compare a base case with alternative scenarios.' },
+    ],
+    outcomes: [
+      { title: 'Visibility',          desc: 'Leadership works from one current picture of cash.' },
+      { title: 'Less manual work',    desc: 'Less time assembling positions from separate sources.' },
+      { title: 'Better planning',     desc: 'Forecast and scenarios are available when decisions are made.' },
+    ],
+    related: ['cash-application-ops', 'ap-ar-ops', 'reporting-analytics'],
+  },
+  {
+    slug: 'close-ops',
+    name: 'CloseOps',
+    icon: 'calendar',
+    tagline: 'Run the period close from one checklist with clear owners, due dates, and sign-off.',
+    headline: 'A period close you can see and manage',
+    intro: 'Move the close calendar out of spreadsheets and status meetings into one shared checklist, configured around your entities, close calendar, and review steps.',
+    problems: [
+      'The close checklist lives in a spreadsheet that only one person fully trusts.',
+      'Status is gathered through meetings and chat messages.',
+      'The same tasks cause the same delays every period.',
+    ],
+    scope: [
+      { title: 'Close checklist',       desc: 'Organize close tasks by entity, period, and area.' },
+      { title: 'Owners and due dates',  desc: 'Give every task a named owner and a place in the close calendar.' },
+      { title: 'Review and sign-off',   desc: 'Record who prepared and who reviewed each task.' },
+      { title: 'Close status',          desc: 'See progress by entity and what is holding the close up.' },
+      { title: 'Recurring tasks',       desc: 'Carry the standard checklist forward each period.' },
+    ],
+    outcomes: [
+      { title: 'Financial control',      desc: 'Preparation and review are recorded for every close task.' },
+      { title: 'Operational efficiency', desc: 'Fewer status meetings; bottlenecks are visible early.' },
+      { title: 'Visibility',             desc: 'Anyone can see where the close stands, by entity.' },
+    ],
+    related: ['journal-entry-ops', 'reconciliation-ops', 'audit-controls'],
+  },
+  {
+    slug: 'cash-application-ops',
+    name: 'Cash Application Ops',
+    icon: 'receipt',
+    tagline: 'Apply incoming payments to open invoices with less manual matching.',
+    headline: 'Apply incoming cash with less manual matching',
+    intro: 'Bring receipts, remittance details, and open invoices together so your team reviews suggested applications instead of hunting for them.',
+    problems: [
+      'Receipts arrive without clear remittance detail and are matched by hand.',
+      'Short payments and deductions get lost between teams.',
+      'Unapplied cash builds up and distorts receivables.',
+    ],
+    scope: [
+      { title: 'Receipt intake',       desc: 'Bring bank receipts and remittance information into one place.' },
+      { title: 'Invoice matching',     desc: 'Match receipts to open invoices.' },
+      { title: 'Suggested matches',    desc: 'Present likely applications for a reviewer to confirm.' },
+      { title: 'Short payments',       desc: 'Flag differences and deductions for follow-up.' },
+      { title: 'Unapplied cash',       desc: 'Track unapplied receipts until they are resolved.' },
+    ],
+    outcomes: [
+      { title: 'Less manual work',    desc: 'Reviewers confirm suggestions rather than searching invoice lists.' },
+      { title: 'Financial control',   desc: 'Unapplied and short-paid items stay visible until resolved.' },
+      { title: 'Visibility',          desc: 'Receivables reflect what has actually been received.' },
+    ],
+    related: ['ap-ar-ops', 'reconciliation-ops', 'cashflow-ops'],
+  },
+  {
+    slug: 'ap-ar-ops',
+    name: 'AP & AR Ops',
+    icon: 'swap',
+    tagline: 'Bring control and visibility to what you owe and what you are owed.',
+    headline: 'Control over what you owe and what you are owed',
+    intro: 'Configure payables approvals and receivables follow-up around your policies, so both sides of working capital are managed from one place.',
+    problems: [
+      'Bills are approved over email with no consistent trail.',
+      'Receivables follow-up depends on individual spreadsheets and memory.',
+      'Nobody sees payables and receivables side by side.',
+    ],
+    scope: [
+      { title: 'Payables approvals',     desc: 'Route bills for approval before they are released for payment.' },
+      { title: 'Payment visibility',     desc: 'See what is due, when, and what is on hold.' },
+      { title: 'Receivables aging',      desc: 'View open receivables by age and by customer.' },
+      { title: 'Collections follow-up',  desc: 'Track outreach, commitments, and next steps.' },
+      { title: 'Exception handling',     desc: 'Manage disputes, holds, and mismatches to resolution.' },
+    ],
+    outcomes: [
+      { title: 'Financial control',      desc: 'Approvals follow your policy and leave a record.' },
+      { title: 'Operational efficiency', desc: 'Follow-up runs from a shared queue, not personal lists.' },
+      { title: 'Visibility',             desc: 'Payables and receivables are visible together.' },
+    ],
+    related: ['cash-application-ops', 'cashflow-ops', 'reporting-analytics'],
+  },
+  {
+    slug: 'reporting-analytics',
+    name: 'Reporting & Analytics',
+    icon: 'bars',
+    tagline: 'Management reporting and finance analytics built around the questions you are asked.',
+    headline: 'Reporting your team does not have to rebuild every month',
+    intro: 'Define the reports and measures leadership relies on once, then produce them consistently across entities and periods.',
+    problems: [
+      'The reporting pack is rebuilt by hand every period.',
+      'Numbers differ depending on whose spreadsheet they came from.',
+      'Variance explanations start late because the data arrives late.',
+    ],
+    scope: [
+      { title: 'Management reporting',  desc: 'Standard reporting packs for leadership and the board.' },
+      { title: 'Budget versus actual',  desc: 'Variance views by department, entity, or account.' },
+      { title: 'Multi-entity views',    desc: 'Consolidated and entity-level perspectives side by side.' },
+      { title: 'KPI dashboards',        desc: 'The finance measures your organization tracks, in one place.' },
+    ],
+    outcomes: [
+      { title: 'Less manual work',    desc: 'Less time assembling reports, more time explaining them.' },
+      { title: 'Consistency',         desc: 'One agreed definition for each measure.' },
+      { title: 'Visibility',          desc: 'Leadership sees performance without waiting for the pack.' },
+    ],
+    related: ['cashflow-ops', 'close-ops', 'audit-controls'],
+  },
+  {
+    slug: 'audit-controls',
+    name: 'Audit & Controls',
+    icon: 'approve',
+    tagline: 'Document finance controls, record that they were performed, and keep the evidence together.',
+    headline: 'Controls that are documented, performed, and easy to evidence',
+    intro: 'Build your control framework into the workflows your team already runs, so evidence is captured as the work happens rather than gathered afterwards.',
+    problems: [
+      'Controls are documented in one place and performed in another.',
+      'Evidence is collected in a scramble before the audit.',
+      'It is hard to show who approved what, and when.',
+    ],
+    scope: [
+      { title: 'Control definitions',  desc: 'Record each control with its owner and frequency.' },
+      { title: 'Approval evidence',    desc: 'Capture who approved what, and when, as part of the workflow.' },
+      { title: 'Activity history',     desc: 'Keep a record of changes and actions on finance items.' },
+      { title: 'Evidence collection',  desc: 'Store supporting documents alongside the control they support.' },
+      { title: 'Exception tracking',   desc: 'Log control exceptions and follow them to closure.' },
+    ],
+    outcomes: [
+      { title: 'Financial control',      desc: 'Controls are performed inside the workflow, not beside it.' },
+      { title: 'Operational efficiency', desc: 'Less time spent assembling evidence for reviewers.' },
+      { title: 'Visibility',             desc: 'A current view of which controls are performed and which are due.' },
+    ],
+    related: ['journal-entry-ops', 'close-ops', 'reconciliation-ops'],
+  },
+];
+
+export const solutionPath = (slug) => `/solutions/${slug}`;
+export const getSolution = (slug) => SOLUTIONS.find((s) => s.slug === slug);

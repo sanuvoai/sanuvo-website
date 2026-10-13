@@ -6,7 +6,7 @@ export const PAGES = [
   {
     path: '/',
     title: 'Sanuvo | Financial Operations. Under Control.',
-    description: 'Sanuvo is a Financial Operations Optimization company. A configurable Financial Operations Control Layer, implementation services, and custom finance workflow automation.',
+    description: 'Sanuvo is a Financial Operations Optimization company: a configurable control layer, implementation services, and custom finance workflow automation.',
   },
   {
     path: '/platform',
@@ -16,7 +16,7 @@ export const PAGES = [
   {
     path: '/solutions',
     title: 'Finance Operations Solutions | Sanuvo',
-    description: 'Eight solution areas configured around your finance operations: journal entries, reconciliations, cash flow, close, cash application, AP and AR, reporting, and controls.',
+    description: 'Eight solution areas configured around your finance operations, from journal entries and reconciliations to close, cash, reporting, and controls.',
   },
   ...SOLUTIONS.map((s) => ({
     path: solutionPath(s.slug),
@@ -26,7 +26,7 @@ export const PAGES = [
   {
     path: '/implementation',
     title: 'Implementation Services | Sanuvo',
-    description: 'From workflow assessment to implementation. Sanuvo assesses your finance workflows and determines the right scope: platform functionality, configuration, or custom implementation.',
+    description: 'From workflow assessment to implementation. Sanuvo assesses your finance workflows and determines the right scope before work begins.',
   },
   {
     path: '/roles',
@@ -36,7 +36,7 @@ export const PAGES = [
   {
     path: '/about',
     title: 'About Sanuvo',
-    description: 'Sanuvo is a Financial Operations Optimization company offering a configurable Financial Operations Control Layer, implementation services, and custom finance workflow automation.',
+    description: 'Sanuvo is a Financial Operations Optimization company offering a configurable control layer, implementation services, and custom workflow automation.',
   },
   ...(PRIVACY_POLICY_APPROVED
     ? [{

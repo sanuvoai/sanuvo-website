@@ -37,7 +37,7 @@
   --shadow-md: 0 8px 24px -8px rgba(6, 20, 43, 0.14);
   --shadow-lg: 0 32px 64px -24px rgba(6, 20, 43, 0.28), 0 10px 24px -10px rgba(6, 20, 43, 0.14);
 
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --nav-height: 72px;
 }
 

@@ -13,7 +13,19 @@ const { render, PAGES, NOT_FOUND, SITE_URL } = await import(
   pathToFileURL(path.join(serverDir, 'entry-server.js')).href
 );
 
-const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+let template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+
+// Preload the self-hosted Latin font so text does not shift when it swaps in.
+const latinFont = fs.readdirSync(path.join(dist, 'assets')).find((f) => /^inter-latin-wght-normal-.*\.woff2$/.test(f));
+if (!latinFont) throw new Error('prerender: self-hosted Inter font not found in dist/assets');
+template = template.replace('</title>', () => `</title>\n    <link rel="preload" href="/assets/${latinFont}" as="font" type="font/woff2" crossorigin />`);
+
+// Organization schema gets the site URL once it is configured. No product claims are added.
+if (SITE_URL) {
+  const org = '"name": "Sanuvo",';
+  if (!template.includes(org)) throw new Error('prerender: Organization schema not found in index.html');
+  template = template.replace(org, () => `${org}\n        "url": "${SITE_URL}",`);
+}
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 function setMeta(html, attr, name, value) {

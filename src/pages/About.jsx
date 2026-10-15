@@ -4,6 +4,8 @@ import SectionHeader from '../components/ui/SectionHeader';
 import Reveal from '../components/ui/Reveal';
 import Icon from '../components/ui/Icon';
 import CtaBand from '../components/CtaBand';
+import DemoButton from '../components/ui/DemoButton';
+import { CONTACT_EMAIL } from '../config/site';
 
 const OFFERINGS = [
   {
@@ -82,6 +84,27 @@ export default function About() {
           <p className="section-link">
             <Link to="/roles">See who we work with <Icon name="arrow" size={16} /></Link>
           </p>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="contact-title">
+        <div className="container">
+          <Reveal className="contact-card">
+            <div>
+              <p className="eyebrow">Contact</p>
+              <h2 className="h2 h2--sm" id="contact-title">Talk to Sanuvo</h2>
+              <p className="lead lead--left">
+                For questions about Sanuvo, implementation, or working together, email us directly
+                or book a demo.
+              </p>
+            </div>
+            <div className="contact-card__actions">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="contact-card__email">
+                <Icon name="mail" size={20} /> {CONTACT_EMAIL}
+              </a>
+              <DemoButton />
+            </div>
+          </Reveal>
         </div>
       </section>
 

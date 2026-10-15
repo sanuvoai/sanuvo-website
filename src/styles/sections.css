@@ -61,7 +61,7 @@
 }
 .nav__menu-item:hover .nav__menu-icon, .nav__menu-item.active .nav__menu-icon { background: var(--surface); }
 .nav__menu-item strong { display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
-.nav__menu-item small  { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.4; color: var(--muted); }
+.nav__menu-item small  { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.4; color: var(--text); }
 .nav__menu-all {
   display: flex; align-items: center; justify-content: center; gap: 6px;
   margin-top: 8px; padding: 12px;
@@ -461,3 +461,27 @@
 
 .diagram__label--sub { margin-top: 6px; color: var(--on-dark-muted) !important; }
 .diagram__module--scoped { background: transparent; border-style: dashed; color: var(--on-dark); }
+
+/* ── Contact ───────────────────────────── */
+.footer__contact { display: flex; flex-direction: column; gap: 2px; margin: -4px 0 20px; }
+.footer__contact-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+.footer__email { color: var(--on-dark); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.35); overflow-wrap: anywhere; }
+.footer__email:hover { color: #fff; text-decoration-color: currentColor; }
+
+.contact-card {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: center;
+  padding: 40px;
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+.contact-card__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.contact-card__email {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 18px; font-weight: 600; color: var(--blue-700);
+  text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere;
+}
+.contact-card__email svg { flex: none; }
+@media (max-width: 800px) {
+  .contact-card { grid-template-columns: minmax(0, 1fr); padding: 28px 22px; }
+}

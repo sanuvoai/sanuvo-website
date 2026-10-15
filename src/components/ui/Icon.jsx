@@ -21,6 +21,7 @@ const PATHS = {
   layers:   <path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5" />,
   sliders:  <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4.5v5M6 14.5v5" />,
   code:     <path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14" />,
+  mail:     <path d="M4 6h16v12H4zM4 7l8 6 8-6" />,
 };
 
 export default function Icon({ name, size = 20, className = '' }) {

@@ -13,15 +13,15 @@ export const HOME_FAQS = [
   },
   {
     q: 'Does Sanuvo replace our ERP?',
-    a: 'No. Sanuvo is designed for your existing financial systems. It addresses the preparation, review, matching, and reporting work that typically happens in spreadsheets and email around them.',
+    a: 'No. Sanuvo is designed for your existing financial systems. It addresses the preparation, approval, close, and evidence work that typically happens in spreadsheets and email around them.',
   },
   {
     q: 'How does Sanuvo work with our existing systems?',
-    a: 'That is determined during the workflow assessment, because it depends on the systems you run and the workflow in question. We do not publish a list of supported integrations. For journal entries, Sanuvo produces export files prepared for upload through your ledger system\'s own import process.',
+    a: 'That is determined during the workflow assessment, because it depends on the systems you run and the workflow in question. We do not publish a list of supported integrations. For journal entries, Sanuvo produces QuickBooks Desktop IIF or ERP-neutral CSV files for upload through your ledger system\'s own import process; other ERP formats are mapped and validated during implementation.',
   },
   {
     q: 'How do we know what Sanuvo can deliver for us?',
-    a: 'Each solution is delivered through platform functionality, configuration, or scoped custom implementation. We assess your workflows first and tell you which applies to each of your requirements before any scope is agreed.',
+    a: 'Journal entries, reconciliation tasks, the close, variance analysis, and audit evidence run on the platform and are configured around your organization. Cash flow, cash application, AP and AR, and management reporting are delivered through scoped implementation. We assess your workflows first and tell you which applies to each of your requirements before any scope is agreed.',
   },
   {
     q: 'What does implementation involve?',

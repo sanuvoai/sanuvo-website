@@ -16,8 +16,9 @@ export default function ReportingPreview() {
 
   return (
     <PreviewFrame
+      kind="concept"
       title="Reporting & Analytics"
-      description="Conceptual preview of a management reporting view with revenue, operating expenses and margin, a six-month revenue bar chart, and a budget versus actual table by department."
+      description="Implementation concept: a management reporting view with revenue, operating expenses and margin, a six-month revenue bar chart, and a budget versus actual table by department."
     >
       <div className="pv">
         <div className="pv__head">

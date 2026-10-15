@@ -219,6 +219,7 @@ a { color: inherit; }
 }
 .card--link:hover { border-color: var(--blue-600); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .card--link .card__icon { align-self: flex-start; }
+.card__delivery { margin-top: 12px !important; font-size: 13px !important; font-weight: 500; color: var(--muted); }
 .card--link .card__more { margin-top: auto; padding-top: 18px; }
 .card > a.card__more { margin-top: 18px; }
 .card--role .card__statement { margin-top: 10px; font-size: 17px; line-height: 1.5; color: var(--ink); }

@@ -1,33 +1,28 @@
 import PreviewFrame from '../ui/PreviewFrame';
+import Icon from '../ui/Icon';
 import StatusChip from './StatusChip';
-import { CONTROLS_LOG, PERIOD } from './sampleData';
-
-const TILES = [
-  { label: 'Controls tracked',  value: '48' },
-  { label: 'Performed',         value: '40' },
-  { label: 'Due for review',    value: '5'  },
-  { label: 'Open exceptions',   value: '3'  },
-];
+import { BINDER_ITEMS, BINDER_SUMMARY, PERIOD } from './sampleData';
 
 export default function AuditControlsPreview() {
   return (
     <PreviewFrame
       title="Audit & Controls"
-      description="Conceptual preview of a finance controls register listing controls with their area, owner, date last performed and status, with a summary of controls performed, due and in exception."
+      description="Preview of an audit evidence binder listing evidence items by process, who attached each reference and when, and its readiness, with a summary of items ready, pending review, missing evidence or in exception, and an export action."
     >
       <div className="pv">
         <div className="pv__head">
           <div>
-            <p className="pv__title">Controls register</p>
+            <p className="pv__title">Audit evidence binder</p>
             <p className="pv__sub">{PERIOD} · All entities</p>
           </div>
+          <span className="pv__action"><Icon name="export" size={14} /> Export audit package</span>
         </div>
 
         <div className="pv__tiles pv__tiles--4">
-          {TILES.map((t) => (
-            <div key={t.label} className="tile">
-              <p className="tile__label">{t.label}</p>
-              <p className="tile__value">{t.value}</p>
+          {BINDER_SUMMARY.map((s) => (
+            <div key={s.label} className="tile">
+              <p className="tile__label"><i className={`chip__dot chip__dot--${s.tone}`} />{s.label}</p>
+              <p className="tile__value">{s.count}</p>
             </div>
           ))}
         </div>
@@ -35,29 +30,29 @@ export default function AuditControlsPreview() {
         <table className="ptable">
           <thead>
             <tr>
-              <th className="col-b">ID</th>
-              <th>Control</th>
-              <th className="col-a">Owner</th>
-              <th className="col-c">Last performed</th>
-              <th>Status</th>
+              <th>Evidence item</th>
+              <th className="col-b">Process</th>
+              <th className="col-a">Attached by</th>
+              <th className="col-c">When</th>
+              <th>Readiness</th>
             </tr>
           </thead>
           <tbody>
-            {CONTROLS_LOG.map((c) => (
-              <tr key={c.id}>
-                <td className="col-b ptable__id">{c.id}</td>
-                <td className="ptable__grow">{c.control}</td>
-                <td className="col-a">{c.owner}</td>
-                <td className="col-c">{c.last}</td>
-                <td><StatusChip status={c.status} /></td>
+            {BINDER_ITEMS.map((b) => (
+              <tr key={b.item}>
+                <td className="ptable__grow ptable__id">{b.item}</td>
+                <td className="col-b">{b.process}</td>
+                <td className="col-a">{b.attachedBy}</td>
+                <td className="col-c">{b.when}</td>
+                <td><StatusChip status={b.status} /></td>
               </tr>
             ))}
           </tbody>
         </table>
 
         <div className="pv__foot">
-          <span>Showing 4 of 48 controls</span>
-          <span>40 performed · 5 due · 3 in exception</span>
+          <span>Showing 5 of 48 items</span>
+          <span>40 ready · 5 pending review · 3 need attention</span>
         </div>
       </div>
     </PreviewFrame>

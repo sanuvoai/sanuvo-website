@@ -13,8 +13,9 @@ const MAX = Math.max(...AR_AGING.map((a) => a.amount));
 export default function ApArPreview() {
   return (
     <PreviewFrame
+      kind="concept"
       title="AP & AR Ops"
-      description="Conceptual preview of a payables and receivables workspace showing open receivables by age bucket and a list of bills with their approval status."
+      description="Implementation concept: a payables and receivables workspace showing open receivables by age bucket and a list of bills with their approval status."
     >
       <div className="pv">
         <div className="pv__head">

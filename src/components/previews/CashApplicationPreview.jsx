@@ -12,8 +12,9 @@ const TILES = [
 export default function CashApplicationPreview() {
   return (
     <PreviewFrame
+      kind="concept"
       title="Cash Application Ops"
-      description="Conceptual preview of a cash application queue showing incoming receipts, the invoices they are matched or suggested against, and items that are short-paid or unapplied."
+      description="Implementation concept: a cash application queue showing incoming receipts, the invoices they are matched or suggested against, and items that are short-paid or unapplied."
     >
       <div className="pv">
         <div className="pv__head">

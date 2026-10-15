@@ -11,7 +11,7 @@ export const PAGES = [
   {
     path: '/platform',
     title: 'Financial Operations Control Layer | Sanuvo',
-    description: 'A configurable control layer that works around your existing financial systems, bringing preparation, review, matching, and visibility into one place.',
+    description: 'A configurable control layer around your existing financial systems for journal preparation, approvals, close management, and audit evidence.',
   },
   {
     path: '/solutions',

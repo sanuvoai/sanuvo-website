@@ -1,22 +1,21 @@
 import PreviewFrame from '../ui/PreviewFrame';
 import Icon from '../ui/Icon';
 import StatusChip from './StatusChip';
-import CashChart from './CashChart';
-import { JOURNAL_ENTRIES, ENTITY_PROGRESS, PERIOD } from './sampleData';
+import { JOURNAL_ENTRIES, ENTITY_PROGRESS, POSTING_PACKAGES, PERIOD } from './sampleData';
 
 const NAV = [
   { label: 'Overview',        icon: 'status',  active: true },
   { label: 'Journal Entries', icon: 'journal' },
-  { label: 'Reconciliations', icon: 'match'   },
-  { label: 'Cashflow',        icon: 'cash'    },
-  { label: 'Exports',         icon: 'export'  },
+  { label: 'Close',           icon: 'calendar' },
+  { label: 'ERP Posting',     icon: 'export'  },
+  { label: 'Evidence',        icon: 'approve' },
 ];
 
 const KPIS = [
-  { label: 'Entries awaiting approval', value: '6',      meta: 'of 24 this period'    },
-  { label: 'Reconciliations complete',  value: '16 / 22', meta: 'Accounts this period' },
-  { label: 'Open exceptions',           value: '4',      meta: 'Need review'          },
-  { label: 'Cash position',             value: '$4.82M', meta: 'Across 4 entities'    },
+  { label: 'Entries awaiting approval',     value: '6',       meta: 'of 24 this period'      },
+  { label: 'Reconciliation tasks complete', value: '16 / 22', meta: 'This period'            },
+  { label: 'Open exceptions',               value: '4',       meta: 'Close and variance'     },
+  { label: 'Awaiting ERP confirmation',     value: '2',       meta: 'Posting packages'       },
 ];
 
 export default function HeroDashboard() {
@@ -24,7 +23,7 @@ export default function HeroDashboard() {
     <PreviewFrame
       className="preview--hero"
       title="Sanuvo · Financial Operations Control Layer"
-      description="Dashboard preview of the Sanuvo control layer: period-close overview with entries awaiting approval, reconciliations complete, open exceptions and cash position, an approval queue, close progress by entity, and a cash forecast."
+      description="Preview of the Sanuvo control layer: a period-close overview with entries awaiting approval, reconciliation tasks complete, open exceptions and posting packages awaiting ERP confirmation, a journal entry approval queue, close progress by entity, and a list of posting packages."
     >
       <div className="app">
         <aside className="app__side">
@@ -94,10 +93,29 @@ export default function HeroDashboard() {
           </div>
 
           <div className="panel app__chart">
-            <p className="panel__title">Cash forecast · 13 weeks</p>
-            <div className="panel__body">
-              <CashChart compact />
-            </div>
+            <p className="panel__title">Posting packages</p>
+            <table className="ptable">
+              <thead>
+                <tr>
+                  <th>Package</th>
+                  <th className="col-c">Format</th>
+                  <th className="num">Entries</th>
+                  <th className="col-b">Created</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {POSTING_PACKAGES.map((p) => (
+                  <tr key={p.id}>
+                    <td className="ptable__id">{p.id}</td>
+                    <td className="col-c ptable__grow">{p.format}</td>
+                    <td className="num">{p.entries}</td>
+                    <td className="col-b">{p.created}</td>
+                    <td><StatusChip status={p.status} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

@@ -17,5 +17,8 @@ export const NAV_LINKS = [
   { label: 'About',          to: '/about'          },
 ];
 
-// Shown under every dashboard preview. Previews are illustrations, not screenshots.
+// Shown under every preview. Previews are illustrations, not screenshots.
+// PREVIEW: illustrates platform functionality. CONCEPT: illustrates what a scoped
+// implementation could deliver; it does not depict an existing product screen.
 export const PREVIEW_DISCLAIMER = 'Illustrative preview — sample data.';
+export const CONCEPT_DISCLAIMER = 'Illustrative implementation concept — sample data.';

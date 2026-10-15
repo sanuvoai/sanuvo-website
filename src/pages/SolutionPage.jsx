@@ -17,6 +17,8 @@ export default function SolutionPage() {
 
   const { name, headline, intro, problems, scope, note, outcomes, related } = solution;
   const Preview = PREVIEWS[slug];
+  const platformScope = scope.filter((s) => s.via === 'platform');
+  const implementationScope = scope.filter((s) => s.via !== 'platform');
 
   return (
     <>
@@ -55,18 +57,33 @@ export default function SolutionPage() {
             id="scope-title"
             eyebrow="Scope"
             title={`What a ${name} engagement can cover`}
-            lead="The exact scope is set by your workflow assessment. These are the areas we most often configure."
+            lead={platformScope.length
+              ? 'The exact scope is set by your workflow assessment.'
+              : `${name} is delivered through a scoped implementation. The exact scope is set by your workflow assessment.`}
           />
 
-          <div className="grid grid--3">
-            {scope.map((s, i) => (
-              <Reveal key={s.title} delay={(i % 3) * 80} className="card">
-                <span className="card__icon"><Icon name="check" size={22} /></span>
-                <h3 className="h3">{s.title}</h3>
-                <p>{s.desc}</p>
-              </Reveal>
-            ))}
-          </div>
+          {[
+            { key: 'platform', items: platformScope, title: 'In the platform', desc: 'Configured around your entities, approvers, and controls.' },
+            { key: 'implementation', items: implementationScope, title: 'Through scoped implementation', desc: 'Designed and built for your organization, with the work defined and agreed before it starts.' },
+          ].filter((g) => g.items.length).map((group) => (
+            <div key={group.key} className="scope-group">
+              {platformScope.length > 0 && implementationScope.length > 0 && (
+                <div className="scope-group__head">
+                  <h3 className="scope-group__title">{group.title}</h3>
+                  <p className="scope-group__desc">{group.desc}</p>
+                </div>
+              )}
+              <div className="grid grid--3">
+                {group.items.map((s, i) => (
+                  <Reveal key={s.title} delay={(i % 3) * 80} className={`card${group.key === 'implementation' ? ' card--scoped' : ''}`}>
+                    <span className="card__icon"><Icon name={group.key === 'implementation' ? 'sliders' : 'check'} size={22} /></span>
+                    <h3 className="h3">{s.title}</h3>
+                    <p>{s.desc}</p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          ))}
 
           {note && <p className="scope-note">{note}</p>}
         </div>

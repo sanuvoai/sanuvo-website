@@ -6,7 +6,7 @@ import SolutionCards from '../components/SolutionCards';
 import DeliveryModel from '../components/DeliveryModel';
 import CtaBand from '../components/CtaBand';
 import HeroDashboard from '../components/previews/HeroDashboard';
-import { SOLUTIONS } from '../content/solutions';
+import { PLATFORM_SOLUTIONS, IMPLEMENTATION_SOLUTIONS } from '../content/solutions';
 
 const PRINCIPLES = [
   {
@@ -31,7 +31,7 @@ const PRINCIPLES = [
   },
 ];
 
-const SOURCES = ['ERP and general ledger', 'Bank data', 'Spreadsheets and files'];
+const SOURCES = ['ERP and general ledger', 'Balance and budget files', 'Supporting documents'];
 const RESULTS = ['Controlled workflows', 'Clear ownership', 'Visibility for leadership'];
 
 export default function Platform() {
@@ -40,7 +40,7 @@ export default function Platform() {
       <PageHero
         eyebrow="Platform"
         title="The Financial Operations Control Layer"
-        lead="A configurable layer that works around your existing financial systems and brings preparation, review, matching, and visibility into one controlled place."
+        lead="A configurable layer that works around your existing financial systems and brings journal preparation, approvals, close management, and audit evidence into one controlled place."
         secondary={{ label: 'Explore Solutions', to: '/solutions' }}
       />
 
@@ -65,11 +65,17 @@ export default function Platform() {
               <div className="diagram__col diagram__col--core">
                 <p className="diagram__label">Sanuvo Financial Operations Control Layer</p>
                 <div className="diagram__modules">
-                  {SOLUTIONS.map((s) => (
+                  {PLATFORM_SOLUTIONS.map((s) => (
                     <span key={s.slug} className="diagram__module"><Icon name={s.icon} size={15} /> {s.name}</span>
                   ))}
                 </div>
                 <p className="diagram__base">Workflows · Approvals · Status · Exceptions</p>
+                <p className="diagram__label diagram__label--sub">Delivered through scoped implementation</p>
+                <div className="diagram__modules">
+                  {IMPLEMENTATION_SOLUTIONS.map((s) => (
+                    <span key={s.slug} className="diagram__module diagram__module--scoped"><Icon name={s.icon} size={15} /> {s.name}</span>
+                  ))}
+                </div>
               </div>
 
               <span className="diagram__arrow" aria-hidden="true"><Icon name="arrow" size={22} /></span>
@@ -118,8 +124,8 @@ export default function Platform() {
           <SectionHeader
             id="modules-title"
             eyebrow="Solution areas"
-            title="Eight solution areas on one layer"
-            lead="Each area is configured around your finance operations and can be introduced on its own or alongside others."
+            title="Eight solution areas, one control layer"
+            lead="Journal entries, reconciliation tasks, the close, variance analysis, and audit evidence run on the platform. Cash flow, cash application, and AP and AR solutions are delivered through scoped implementation."
           />
           <SolutionCards />
         </div>

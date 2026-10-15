@@ -450,3 +450,14 @@
 @media (max-width: 480px) {
   .diagram__modules { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ── Scope groups (solution pages) ─────── */
+.scope-group + .scope-group { margin-top: 48px; }
+.scope-group__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 20px; }
+.scope-group__title { font-size: 20px; font-weight: 700; color: var(--ink); }
+.scope-group__desc { font-size: 15px; color: var(--muted); }
+.card--scoped { background: var(--surface); border-style: dashed; border-color: var(--line-strong); box-shadow: none; }
+.card--scoped .card__icon { background: var(--gray-bg); color: var(--gray-text); }
+
+.diagram__label--sub { margin-top: 6px; color: var(--on-dark-muted) !important; }
+.diagram__module--scoped { background: transparent; border-style: dashed; color: var(--on-dark); }

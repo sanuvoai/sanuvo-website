@@ -13,7 +13,7 @@ export default function CloseOpsPreview() {
   return (
     <PreviewFrame
       title="CloseOps"
-      description="Conceptual preview of a period-close checklist showing tasks by entity with owner, due day and status, and a summary of tasks complete, in review and overdue."
+      description="Preview of a period-close checklist showing tasks by entity with owner, due day and status, and a summary of tasks complete, in review and overdue."
     >
       <div className="pv">
         <div className="pv__head">

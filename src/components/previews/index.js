@@ -1,6 +1,6 @@
 import JournalEntryPreview from './JournalEntryPreview';
 import ReconciliationPreview from './ReconciliationPreview';
-import CashflowPreview from './CashflowPreview';
+import CashflowConcept from './CashflowConcept';
 import CloseOpsPreview from './CloseOpsPreview';
 import CashApplicationPreview from './CashApplicationPreview';
 import ApArPreview from './ApArPreview';
@@ -11,7 +11,7 @@ import AuditControlsPreview from './AuditControlsPreview';
 export const PREVIEWS = {
   'journal-entry-ops':    JournalEntryPreview,
   'reconciliation-ops':   ReconciliationPreview,
-  'cashflow-ops':         CashflowPreview,
+  'cashflow-ops':         CashflowConcept,
   'close-ops':            CloseOpsPreview,
   'cash-application-ops': CashApplicationPreview,
   'ap-ar-ops':            ApArPreview,

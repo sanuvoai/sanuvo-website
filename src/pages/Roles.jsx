@@ -12,7 +12,7 @@ const ROLES = [
     headline: 'Confidence in the numbers and where they stand',
     desc: 'You are accountable for the result, but rarely see the work behind it until it is finished. Sanuvo is configured to give you a current view of financial operations, without waiting for a status update.',
     priorities: [
-      'Visibility into close progress, cash, and open exceptions.',
+      'Visibility into close progress, posting status, and open exceptions.',
       'Assurance that approvals and controls are being followed.',
       'A finance team spending less time on manual work.',
     ],
@@ -33,14 +33,14 @@ const ROLES = [
   {
     id: 'finance-directors',
     role: 'Finance Directors',
-    headline: 'A forward view of cash and performance',
-    desc: 'You are asked what happens next. Sanuvo can be configured to bring cash position, forecast, and reporting together, so planning conversations start from the same picture.',
+    headline: 'Performance explained, not just reported',
+    desc: 'You are asked why the numbers moved. Sanuvo brings budget-versus-actual variances, owner explanations, and independent review into one place, and cash and reporting views can be built for you through a scoped implementation.',
     priorities: [
-      'A current cash position across entities.',
-      'Forecasts and scenarios available when decisions are made.',
-      'Reporting that does not have to be rebuilt each period.',
+      'Budget-versus-actual variances by account and entity.',
+      'Explanations from the owner, reviewed by someone else.',
+      'Cash and management reporting views delivered to scope.',
     ],
-    solutions: ['cashflow-ops', 'reporting-analytics', 'ap-ar-ops', 'cash-application-ops'],
+    solutions: ['reporting-analytics', 'close-ops', 'cashflow-ops', 'ap-ar-ops'],
   },
   {
     id: 'multi-entity-teams',

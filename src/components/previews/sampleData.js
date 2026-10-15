@@ -1,30 +1,32 @@
-// Fictional sample data for the dashboard previews. None of this is customer data.
+// Fictional sample data for the previews. None of this is customer data.
 
 export const PERIOD = 'September 2026';
 
 export const STATUS_TONE = {
-  'Draft':             'gray',
-  'Pending approval':  'amber',
-  'Changes requested': 'red',
-  'Approved':          'green',
-  'Exported':          'blue',
-  'Matched':           'green',
-  'Potential match':   'amber',
-  'Unmatched':         'gray',
-  'Exception':         'red',
-  'Complete':          'green',
-  'In review':         'amber',
-  'In progress':       'blue',
-  'Not started':       'gray',
-  'Overdue':           'red',
-  'Applied':           'green',
-  'Suggested match':   'amber',
-  'Short payment':     'red',
-  'Unapplied':         'gray',
-  'On hold':           'red',
-  'Performed':         'green',
-  'Due':               'amber',
-  'Evidence missing':  'red',
+  'Draft':                  'gray',
+  'Pending approval':       'amber',
+  'Changes requested':      'red',
+  'Approved':               'green',
+  'Exported':               'blue',
+  'Complete':               'green',
+  'In review':              'amber',
+  'In progress':            'blue',
+  'Not started':            'gray',
+  'Overdue':                'red',
+  'Exception':              'red',
+  'Applied':                'green',
+  'Suggested match':        'amber',
+  'Short payment':          'red',
+  'Unapplied':              'gray',
+  'On hold':                'red',
+  'Ready':                  'green',
+  'Pending review':         'amber',
+  'Missing evidence':       'red',
+  'Open exception':         'red',
+  'Awaiting ERP reference': 'amber',
+  'Posted':                 'green',
+  'Referenced':             'green',
+  'Required':               'red',
 };
 
 export const JOURNAL_ENTRIES = [
@@ -43,19 +45,20 @@ export const JE_FILTERS = [
   { label: 'Exported',  count: 4  },
 ];
 
+// Reconciliation close tasks. Summary sums to 22: 16 complete, 3 in review, 1 in progress, 2 in exception.
 export const RECON_SUMMARY = [
-  { label: 'Matched',           count: 312, tone: 'green' },
-  { label: 'Potential matches', count: 18,  tone: 'amber' },
-  { label: 'Unmatched',         count: 9,   tone: 'gray'  },
-  { label: 'Exceptions',        count: 4,   tone: 'red'   },
+  { label: 'Complete',    count: 16, tone: 'green' },
+  { label: 'In review',   count: 3,  tone: 'amber' },
+  { label: 'In progress', count: 1,  tone: 'blue'  },
+  { label: 'Exceptions',  count: 2,  tone: 'red'   },
 ];
 
-export const RECON_ROWS = [
-  { date: '09/28', bank: 'ACH vendor payment',  bankAmt: '-8,420.00', gl: '2000 · AP payment',   glAmt: '-8,420.00', status: 'Matched',         note: ''                 },
-  { date: '09/27', bank: 'Wire deposit',        bankAmt: '25,000.00', gl: '1200 · AR receipt',   glAmt: '25,000.00', status: 'Matched',         note: ''                 },
-  { date: '09/27', bank: 'Card settlement',     bankAmt: '3,187.45',  gl: '1200 · AR receipts',  glAmt: '3,190.00',  status: 'Potential match', note: 'Difference 2.55'  },
-  { date: '09/26', bank: 'Bank service fee',    bankAmt: '-45.00',    gl: 'No GL entry found',   glAmt: '',          status: 'Unmatched',       note: ''                 },
-  { date: '09/25', bank: 'Check #2291',         bankAmt: '-1,250.00', gl: '2000 · AP payment',   glAmt: '-1,520.00', status: 'Exception',       note: 'Amount mismatch'  },
+export const RECON_TASKS = [
+  { account: 'Cash, operating account',  entity: 'US Ops',   owner: 'R. Gomez', reviewer: 'A. Patel', evidence: 'Referenced', status: 'Complete',    note: '' },
+  { account: 'AR subledger to GL',       entity: 'US Ops',   owner: 'M. Chen',  reviewer: 'R. Gomez', evidence: 'Referenced', status: 'In review',   note: '' },
+  { account: 'Intercompany balances',    entity: 'Holdings', owner: 'A. Patel', reviewer: 'M. Chen',  evidence: 'Referenced', status: 'Exception',   note: 'Difference 2,450.00 open' },
+  { account: 'Accrued expenses',         entity: 'UK Ltd',   owner: 'R. Gomez', reviewer: 'A. Patel', evidence: 'Required',   status: 'In progress', note: '' },
+  { account: 'Prepaid expenses',         entity: 'CA Inc',   owner: 'M. Chen',  reviewer: 'A. Patel', evidence: 'Referenced', status: 'Complete',    note: '' },
 ];
 
 export const ENTITY_PROGRESS = [
@@ -65,11 +68,12 @@ export const ENTITY_PROGRESS = [
   { entity: 'Holdings', pct: 45 },
 ];
 
-// Cash balance in $M. Index 0-4 are the last five weekly actuals (index 4 = today);
-// the forecasts start from today and run 13 weeks forward.
-export const CASH_ACTUAL   = [4.35, 4.52, 4.41, 4.68, 4.82];
-export const CASH_BASE     = [4.82, 4.70, 4.55, 4.61, 4.38, 4.20, 4.05, 3.96, 4.22, 4.51, 4.74, 4.95, 5.12, 5.31];
-export const CASH_DOWNSIDE = [4.82, 4.62, 4.40, 4.36, 4.08, 3.84, 3.62, 3.48, 3.63, 3.82, 3.95, 4.06, 4.15, 4.24];
+// Posting packages generated from approved entries.
+export const POSTING_PACKAGES = [
+  { id: 'PKG-0912', format: 'QuickBooks Desktop IIF', entries: 6, created: 'Sep 28', status: 'Awaiting ERP reference' },
+  { id: 'PKG-0911', format: 'ERP-neutral CSV',        entries: 4, created: 'Sep 27', status: 'Awaiting ERP reference' },
+  { id: 'PKG-0910', format: 'ERP-neutral CSV',        entries: 3, created: 'Sep 26', status: 'Posted'                 },
+];
 
 export const CLOSE_TASKS = [
   { task: 'Bank reconciliations',        entity: 'US Ops',   owner: 'R. Gomez', due: 'Day 2', status: 'Complete'    },
@@ -80,10 +84,10 @@ export const CLOSE_TASKS = [
 ];
 
 export const RECEIPTS = [
-  { id: 'RCPT-3301', payer: 'Customer 1042',     amount: '12,480.00', invoice: 'INV-8841',            status: 'Applied',         note: ''                 },
-  { id: 'RCPT-3302', payer: 'Customer 1107',     amount: '5,250.00',  invoice: 'INV-8850, INV-8852',  status: 'Suggested match', note: ''                 },
-  { id: 'RCPT-3303', payer: 'Customer 1019',     amount: '9,900.00',  invoice: 'INV-8790',            status: 'Short payment',   note: 'Short by 100.00'  },
-  { id: 'RCPT-3304', payer: 'Unidentified payer', amount: '2,310.00', invoice: '',                    status: 'Unapplied',       note: ''                 },
+  { id: 'RCPT-3301', payer: 'Customer 1042',      amount: '12,480.00', invoice: 'INV-8841',           status: 'Applied',         note: ''                },
+  { id: 'RCPT-3302', payer: 'Customer 1107',      amount: '5,250.00',  invoice: 'INV-8850, INV-8852', status: 'Suggested match', note: ''                },
+  { id: 'RCPT-3303', payer: 'Customer 1019',      amount: '9,900.00',  invoice: 'INV-8790',           status: 'Short payment',   note: 'Short by 100.00' },
+  { id: 'RCPT-3304', payer: 'Unidentified payer', amount: '2,310.00',  invoice: '',                   status: 'Unapplied',       note: ''                },
 ];
 
 // Open receivables by age, $M. Sums to 2.94.
@@ -119,9 +123,18 @@ export const BUDGET_VS_ACTUAL = [
   { dept: 'Technology', budget: 260,  actual: 241  },
 ];
 
-export const CONTROLS_LOG = [
-  { id: 'JE-01',  control: 'Journal entry approval',     area: 'Close',     owner: 'M. Chen',  last: 'Sep 28', status: 'Performed'        },
-  { id: 'REC-03', control: 'Bank reconciliation review', area: 'Treasury',  owner: 'R. Gomez', last: 'Sep 27', status: 'Performed'        },
-  { id: 'AP-02',  control: 'Vendor change review',       area: 'Payables',  owner: 'A. Patel', last: 'Sep 20', status: 'Evidence missing' },
-  { id: 'ACC-05', control: 'User access review',         area: 'Systems',   owner: 'M. Chen',  last: 'Jun 30', status: 'Due'              },
+// Audit evidence binder items. Summary sums to 48: 40 ready, 5 pending review, 2 missing evidence, 1 open exception.
+export const BINDER_SUMMARY = [
+  { label: 'Ready',            count: 40, tone: 'green' },
+  { label: 'Pending review',   count: 5,  tone: 'amber' },
+  { label: 'Missing evidence', count: 2,  tone: 'red'   },
+  { label: 'Open exception',   count: 1,  tone: 'red'   },
+];
+
+export const BINDER_ITEMS = [
+  { item: 'JE-1041 approval and support',   process: 'Journal entries',    attachedBy: 'A. Patel', when: 'Sep 27', status: 'Ready'            },
+  { item: 'Bank reconciliation, US Ops',    process: 'Reconciliations',    attachedBy: 'R. Gomez', when: 'Sep 26', status: 'Ready'            },
+  { item: 'AR subledger to GL, US Ops',     process: 'Reconciliations',    attachedBy: 'M. Chen',  when: 'Sep 28', status: 'Pending review'   },
+  { item: 'Revenue variance, CA Inc',       process: 'Variance analysis',  attachedBy: '—',        when: '—',      status: 'Missing evidence' },
+  { item: 'Intercompany balances',          process: 'Reconciliations',    attachedBy: 'A. Patel', when: 'Sep 28', status: 'Open exception'   },
 ];

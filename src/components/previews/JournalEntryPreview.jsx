@@ -7,7 +7,7 @@ export default function JournalEntryPreview() {
   return (
     <PreviewFrame
       title="Journal Entry Ops"
-      description="Dashboard preview of a journal entry queue showing entries by entity, amount, preparer and approval status, with approved entries ready for export."
+      description="Preview of a journal entry queue showing entries by entity, amount, preparer and approval status, with approved entries ready to package for the ERP."
     >
       <div className="pv">
         <div className="pv__head">
@@ -15,7 +15,7 @@ export default function JournalEntryPreview() {
             <p className="pv__title">Journal entries</p>
             <p className="pv__sub">{PERIOD} close · All entities</p>
           </div>
-          <span className="pv__action"><Icon name="export" size={14} /> Generate export file</span>
+          <span className="pv__action"><Icon name="export" size={14} /> Generate posting package</span>
         </div>
 
         <div className="pv__filters">

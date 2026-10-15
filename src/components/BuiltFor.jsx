@@ -16,8 +16,8 @@ const ROLES = [
   },
   {
     role: 'Finance Directors',
-    need: 'A forward view of cash',
-    desc: 'Cash position and forecast in one place, so planning conversations start from the same picture.',
+    need: 'Performance explained',
+    desc: 'Budget-versus-actual variances with owner explanations and independent review, so planning starts from the same picture.',
   },
   {
     role: 'Multi-entity accounting teams',

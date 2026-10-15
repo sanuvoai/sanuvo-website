@@ -27,7 +27,7 @@ export default function Problem() {
         <SectionHeader
           id="problem-title"
           eyebrow="The problem"
-          title="The close still runs on spreadsheets, email approvals, and manual matching"
+          title="The close still runs on spreadsheets, email approvals, and manual tracking"
           lead="Most finance teams have an ERP. What they lack is control over the work that happens around it."
         />
 

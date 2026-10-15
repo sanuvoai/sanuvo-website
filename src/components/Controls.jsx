@@ -5,23 +5,23 @@ import Icon from './ui/Icon';
 const CONTROLS = [
   {
     icon: 'approve',
-    title: 'Defined approvals',
-    desc: 'Journal entries move through review before they are exported, rather than being approved in a side conversation.',
+    title: 'Approval tiers and segregation of duties',
+    desc: 'Journal entries move through the approvals their tier requires, and nobody approves their own work.',
   },
   {
     icon: 'status',
-    title: 'Status at every step',
-    desc: 'Each entry carries a visible status from draft to exported, so open work is never a matter of asking around.',
+    title: 'Period locks',
+    desc: 'Closed periods block posting activity, and reopening an entity needs authority and a recorded reason.',
   },
   {
     icon: 'flag',
     title: 'Exceptions in the open',
-    desc: 'Items that do not match are surfaced for review instead of sitting unnoticed in a worksheet tab.',
+    desc: 'Close and variance exceptions are raised, owned, and resolved in the open, and hold back the work that depends on them.',
   },
   {
     icon: 'export',
     title: 'A clean hand-off to the ERP',
-    desc: 'Approved entries leave as ERP-ready export files, which reduces re-keying between approval and posting.',
+    desc: 'Approved entries leave as ERP-ready export files and are marked posted only when the ERP reference is recorded.',
   },
 ];
 

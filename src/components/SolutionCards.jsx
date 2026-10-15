@@ -13,6 +13,7 @@ export default function SolutionCards({ solutions = SOLUTIONS, as: Heading = 'h3
             <span className="card__icon"><Icon name={s.icon} size={22} /></span>
             <Heading className="h3">{s.name}</Heading>
             <p>{s.tagline}</p>
+            {s.offering === 'implementation' && <p className="card__delivery">Delivered through scoped implementation</p>}
             <span className="card__more">Learn more <Icon name="arrow" size={16} /></span>
           </Link>
         </Reveal>

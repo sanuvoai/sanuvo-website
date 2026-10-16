@@ -22,6 +22,7 @@ const PATHS = {
   sliders:  <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4.5v5M6 14.5v5" />,
   code:     <path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14" />,
   mail:     <path d="M4 6h16v12H4zM4 7l8 6 8-6" />,
+  phone:    <path d="M6.5 4h3l1.5 4-2 1.3a11 11 0 005.7 5.7L16 13l4 1.5v3a2 2 0 01-2 2A15 15 0 014.5 6a2 2 0 012-2z" />,
 };
 
 export default function Icon({ name, size = 20, className = '' }) {

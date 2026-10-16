@@ -1,6 +1,8 @@
 // Single source of truth for site-wide links and labels.
 export const BOOKING_URL = 'https://calendly.com/sanuvo-ai';
 export const CONTACT_EMAIL = 'sidaty@sanuvoai.com';
+export const CONTACT_PHONE = '(213) 876-9771';
+export const CONTACT_PHONE_TEL = 'tel:+12138769771';
 
 // Production origin (no trailing slash). Used at build time for canonical URLs, og:url
 // and sitemap.xml. If left empty the build emits none of them.

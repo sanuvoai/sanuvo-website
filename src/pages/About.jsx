@@ -5,7 +5,7 @@ import Reveal from '../components/ui/Reveal';
 import Icon from '../components/ui/Icon';
 import CtaBand from '../components/CtaBand';
 import DemoButton from '../components/ui/DemoButton';
-import { CONTACT_EMAIL } from '../config/site';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL } from '../config/site';
 
 const OFFERINGS = [
   {
@@ -94,13 +94,16 @@ export default function About() {
               <p className="eyebrow">Contact</p>
               <h2 className="h2 h2--sm" id="contact-title">Talk to Sanuvo</h2>
               <p className="lead lead--left">
-                For questions about Sanuvo, implementation, or working together, email us directly
-                or book a demo.
+                For questions about Sanuvo, implementation, or working together, email or call us
+                directly, or book a demo.
               </p>
             </div>
             <div className="contact-card__actions">
               <a href={`mailto:${CONTACT_EMAIL}`} className="contact-card__email">
                 <Icon name="mail" size={20} /> {CONTACT_EMAIL}
+              </a>
+              <a href={CONTACT_PHONE_TEL} className="contact-card__email">
+                <Icon name="phone" size={20} /> {CONTACT_PHONE}
               </a>
               <DemoButton />
             </div>

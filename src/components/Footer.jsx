@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { NAV_LINKS, BOOKING_URL, CONTACT_EMAIL, PRIVACY_POLICY_APPROVED } from '../config/site';
+import { NAV_LINKS, BOOKING_URL, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, PRIVACY_POLICY_APPROVED } from '../config/site';
 import { SOLUTIONS, solutionPath } from '../content/solutions';
 import Logo from './ui/Logo';
+import Icon from './ui/Icon';
 
 // Only link to destinations that exist.
 const COLUMNS = [
@@ -21,10 +22,11 @@ export default function Footer() {
               Financial Operations Optimization. A configurable Financial Operations Control
               Layer, implementation services, and custom finance workflow automation.
             </p>
-            <p className="footer__contact">
+            <div className="footer__contact">
               <span className="footer__contact-label">Contact</span>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="footer__email">{CONTACT_EMAIL}</a>
-            </p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="footer__email"><Icon name="mail" size={16} /> {CONTACT_EMAIL}</a>
+              <a href={CONTACT_PHONE_TEL} className="footer__email"><Icon name="phone" size={16} /> {CONTACT_PHONE}</a>
+            </div>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
               Book a Demo<span className="sr-only"> (opens in a new tab)</span>
             </a>

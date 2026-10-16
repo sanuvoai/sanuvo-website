@@ -6,6 +6,7 @@ import SolutionCards from '../components/SolutionCards';
 import DeliveryModel from '../components/DeliveryModel';
 import CtaBand from '../components/CtaBand';
 import HeroDashboard from '../components/previews/HeroDashboard';
+import SystemsSection from '../components/SystemsSection';
 import { PLATFORM_SOLUTIONS, IMPLEMENTATION_SOLUTIONS } from '../content/solutions';
 
 const PRINCIPLES = [
@@ -92,7 +93,9 @@ export default function Platform() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="principles-title">
+      <SystemsSection compact />
+
+      <section className="section" aria-labelledby="principles-title">
         <div className="container">
           <SectionHeader id="principles-title" eyebrow="Principles" title="What the platform is built to do" />
           <div className="grid grid--4">
@@ -107,7 +110,7 @@ export default function Platform() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="view-title">
+      <section className="section section--alt" aria-labelledby="view-title">
         <div className="container">
           <SectionHeader
             id="view-title"
@@ -119,7 +122,7 @@ export default function Platform() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="modules-title">
+      <section className="section" aria-labelledby="modules-title">
         <div className="container">
           <SectionHeader
             id="modules-title"

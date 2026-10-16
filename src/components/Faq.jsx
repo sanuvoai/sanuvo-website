@@ -17,7 +17,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'How does Sanuvo work with our existing systems?',
-    a: 'That is determined during the workflow assessment, because it depends on the systems you run and the workflow in question. We do not publish a list of supported integrations. For journal entries, Sanuvo produces QuickBooks Desktop IIF or ERP-neutral CSV files for upload through your ledger system\'s own import process; other ERP formats are mapped and validated during implementation.',
+    a: 'We evaluate your ERP, such as Oracle NetSuite, SAP, Microsoft Dynamics, or Yardi, along with your banking and spreadsheet data, during the workflow assessment. We then scope, map, and validate the integration or workflow your process needs. Two export formats are available today: an ERP-neutral CSV and QuickBooks Desktop IIF, both uploaded through your ledger system\'s own import process. We do not claim certified integrations, vendor partnerships, native connectors, or live synchronization.',
   },
   {
     q: 'How do we know what Sanuvo can deliver for us?',

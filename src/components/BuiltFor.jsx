@@ -28,7 +28,7 @@ const ROLES = [
 
 export default function BuiltFor() {
   return (
-    <section id="built-for" className="section section--alt" aria-labelledby="built-for-title">
+    <section id="built-for" className="section" aria-labelledby="built-for-title">
       <div className="container">
         <SectionHeader
           id="built-for-title"

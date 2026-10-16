@@ -7,6 +7,7 @@ import Faq from '../components/Faq';
 import CtaBand from '../components/CtaBand';
 import SolutionCards from '../components/SolutionCards';
 import SectionHeader from '../components/ui/SectionHeader';
+import SystemsSection from '../components/SystemsSection';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         </div>
       </section>
 
+      <SystemsSection />
       <HowItWorks />
       <BuiltFor />
       <Controls />

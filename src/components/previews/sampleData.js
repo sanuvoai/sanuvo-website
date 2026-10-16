@@ -138,3 +138,36 @@ export const BINDER_ITEMS = [
   { item: 'Revenue variance, CA Inc',       process: 'Variance analysis',  attachedBy: '—',        when: '—',      status: 'Missing evidence' },
   { item: 'Intercompany balances',          process: 'Reconciliations',    attachedBy: 'A. Patel', when: 'Sep 28', status: 'Open exception'   },
 ];
+
+// ── Command Center (homepage). All figures reconcile across panels. ──────────────
+// Close tasks by entity: 61 tasks, 42 complete (69%). Close exceptions: CA Inc 1 + Holdings 2 = 3.
+export const CLOSE_BY_ENTITY = [
+  { entity: 'US Ops',   complete: 18, review: 2, open: 2, exception: 0 },
+  { entity: 'CA Inc',   complete: 10, review: 2, open: 1, exception: 1 },
+  { entity: 'UK Ltd',   complete: 9,  review: 2, open: 3, exception: 0 },
+  { entity: 'Holdings', complete: 5,  review: 1, open: 3, exception: 2 },
+];
+
+// Six entries await approval; two have waited more than three days.
+export const APPROVAL_QUEUE = [
+  { id: 'JE-1042', desc: 'Accrued payroll, September', amount: '184,250.00', tier: 'Tier 2', waiting: '5 days', approver: 'Controller', note: '' },
+  { id: 'JE-1045', desc: 'Intercompany recharge, Q3',  amount: '96,730.00',  tier: 'Tier 2', waiting: '4 days', approver: 'Controller', note: '' },
+  { id: 'JE-1046', desc: 'Prepaid software, annual',   amount: '18,600.00',  tier: 'Tier 1', waiting: '1 day',  approver: 'Accounting Manager', note: '' },
+  { id: 'JE-1047', desc: 'Bonus accrual, Q3',          amount: '52,000.00',  tier: 'Tier 1', waiting: 'Today',  approver: 'Accounting Manager', note: 'Preparer A. Patel cannot approve' },
+];
+
+// Two packages await an ERP reference; debits equal credits in each.
+export const PACKAGES_PANEL = [
+  { id: 'PKG-0912', format: 'ERP-neutral CSV',        entries: 6, total: '1,284,520.00', status: 'Awaiting ERP reference', reference: '' },
+  { id: 'PKG-0911', format: 'ERP-neutral CSV',        entries: 4, total: '312,940.00',   status: 'Awaiting ERP reference', reference: '' },
+  { id: 'PKG-0910', format: 'QuickBooks Desktop IIF', entries: 3, total: '86,215.40',    status: 'Posted',                 reference: 'JRN-55790' },
+];
+
+// Four open exceptions: three close (two of them reconciliation tasks) and one variance.
+// Revenue variance: actual 1,629,800.00 vs budget 1,450,000.00 = +179,800.00 (+12.4%).
+export const EXCEPTIONS_FEED = [
+  { type: 'Close',    entity: 'Holdings', title: 'Intercompany balances reconciliation', detail: 'Difference of 2,450.00 under investigation' },
+  { type: 'Close',    entity: 'CA Inc',   title: 'Deferred revenue reconciliation',      detail: 'Difference of 1,180.00 under investigation' },
+  { type: 'Close',    entity: 'Holdings', title: 'Fixed asset roll-forward',             detail: 'Schedule differs from GL by 3,920.00' },
+  { type: 'Variance', entity: 'CA Inc',   title: 'Revenue vs budget: +179,800.00 (+12.4%)', detail: 'Explanation submitted, awaiting review' },
+];

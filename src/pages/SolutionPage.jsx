@@ -6,7 +6,8 @@ import Icon from '../components/ui/Icon';
 import SolutionCards from '../components/SolutionCards';
 import DeliveryModel from '../components/DeliveryModel';
 import CtaBand from '../components/CtaBand';
-import { PREVIEWS } from '../components/previews';
+import { PREVIEWS, CONCEPT_VISUALS } from '../components/previews';
+import ControlPath from '../components/ControlPath';
 import { getSolution } from '../content/solutions';
 import NotFound from './NotFound';
 
@@ -15,7 +16,8 @@ export default function SolutionPage() {
   const solution = getSolution(slug);
   if (!solution) return <NotFound />;
 
-  const { name, headline, intro, problems, scope, note, outcomes, related } = solution;
+  const { name, headline, intro, problems, scope, note, outcomes, related, controlPath, conceptVisual } = solution;
+  const concept = conceptVisual && CONCEPT_VISUALS[conceptVisual];
   const Preview = PREVIEWS[slug];
   const platformScope = scope.filter((s) => s.via === 'platform');
   const implementationScope = scope.filter((s) => s.via !== 'platform');
@@ -50,6 +52,8 @@ export default function SolutionPage() {
           </Reveal>
         </div>
       </section>
+
+      {controlPath && <ControlPath />}
 
       <section className="section section--alt" aria-labelledby="scope-title">
         <div className="container">
@@ -86,6 +90,14 @@ export default function SolutionPage() {
           ))}
 
           {note && <p className="scope-note">{note}</p>}
+
+          {concept && (
+            <Reveal className="scope-concept">
+              <h3 className="scope-group__title">{concept.title}</h3>
+              <p className="scope-group__desc">An illustration of what this work could deliver, using fictional data. It is not an existing platform screen.</p>
+              <concept.Component />
+            </Reveal>
+          )}
         </div>
       </section>
 

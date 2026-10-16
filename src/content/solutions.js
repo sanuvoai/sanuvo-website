@@ -9,6 +9,8 @@
 //   'implementation' when the solution as a whole is delivered through scoped work.
 // - `preview` is 'product' for an illustration of platform functionality, 'concept'
 //   for an illustration of what an implementation could deliver.
+// - `conceptVisual` adds a further implementation-concept visual to the scope section;
+//   `controlPath` adds the journal entry control-path timeline.
 // - Never name specific ERPs beyond the supported file formats, certifications,
 //   customer results, or timelines.
 
@@ -43,6 +45,7 @@ export const SOLUTIONS = [
       { title: 'Visibility',        desc: 'One queue shows what is open, who owns it, and what is waiting for the ERP.' },
     ],
     related: ['close-ops', 'audit-controls', 'reconciliation-ops'],
+    controlPath: true,
   },
   {
     slug: 'reconciliation-ops',
@@ -72,6 +75,7 @@ export const SOLUTIONS = [
       { title: 'Visibility',             desc: 'A clear view of which reconciliations are open, in review, in exception, or complete.' },
     ],
     related: ['close-ops', 'audit-controls', 'cash-application-ops'],
+    conceptVisual: 'recon-matching',
   },
   {
     slug: 'cashflow-ops',
@@ -99,6 +103,7 @@ export const SOLUTIONS = [
       { title: 'Better planning',  desc: 'Forecasts and scenarios are ready when decisions are made.' },
     ],
     related: ['ap-ar-ops', 'cash-application-ops', 'reporting-analytics'],
+    conceptVisual: 'cash-forecast',
   },
   {
     slug: 'close-ops',

@@ -12,7 +12,7 @@ export default function PreviewFrame({ title, description, kind = 'product', cap
         <div className="frame__bar">
           <span className="frame__dots"><i /><i /><i /></span>
           <span className="frame__title">{title}</span>
-          <span className="chip chip--blue frame__tag">{kind === 'concept' ? 'Concept' : 'Illustrative'}</span>
+          <span className={`chip ${kind === 'concept' ? 'chip--gray' : 'chip--blue'} frame__tag`}>{kind === 'concept' ? 'Concept' : 'Illustrative'}</span>
         </div>
         {children}
       </div>

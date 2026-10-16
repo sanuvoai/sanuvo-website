@@ -5,6 +5,7 @@ import Icon from '../components/ui/Icon';
 import DeliveryModel from '../components/DeliveryModel';
 import Faq from '../components/Faq';
 import CtaBand from '../components/CtaBand';
+import AiReviewConcept from '../components/previews/AiReviewConcept';
 
 const STEPS = [
   {
@@ -131,6 +132,31 @@ export default function Implementation() {
                 </li>
               ))}
             </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="ai-title">
+        <div className="container solution__grid solution__grid--even">
+          <Reveal className="solution__copy">
+            <p className="eyebrow">Potential scoped implementation</p>
+            <h2 className="h2 h2--sm" id="ai-title">AI-assisted review, with people making every decision</h2>
+            <p className="lead lead--left">
+              AI-assisted review is not a feature of the platform today. Where it fits your process,
+              it can be scoped as a custom implementation: suggested exceptions, possible matches,
+              and draft variance explanations, each reviewed by a person before anything happens.
+            </p>
+            <ul className="features">
+              {['Suggestions only: nothing is posted, approved, or closed without a reviewer.', 'Each suggestion shows the basis for it, so reviewers can check it.', 'Scoped, documented, and agreed with you before any work starts.'].map((a) => (
+                <li key={a}>
+                  <span className="features__check"><Icon name="check" size={14} /></span>
+                  <span>{a}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={120}>
+            <AiReviewConcept />
           </Reveal>
         </div>
       </section>

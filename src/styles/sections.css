@@ -485,3 +485,98 @@
 @media (max-width: 800px) {
   .contact-card { grid-template-columns: minmax(0, 1fr); padding: 28px 22px; }
 }
+
+/* ── Journal entry control path ────────── */
+.section--line { border-top: 1px solid var(--line); }
+.cpath { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cpath__step { position: relative; padding: 0 12px; }
+.cpath__step::before { content: ''; position: absolute; top: 16px; left: 0; right: 0; height: 2px; background: var(--blue-100); }
+.cpath__step:first-child::before { left: 28px; }
+.cpath__step:last-child::before { right: calc(100% - 28px); }
+.cpath__marker {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 13px; font-weight: 700; color: #fff; background: var(--blue-600);
+  box-shadow: 0 0 0 5px var(--surface);
+}
+.cpath__title { margin-top: 14px; font-size: 16px; font-weight: 700; color: var(--ink); }
+.cpath__desc { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.cpath__control {
+  display: inline-flex; align-items: flex-start; gap: 6px;
+  margin-top: 12px; padding: 7px 9px; border-radius: 8px;
+  font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--blue-700); background: var(--blue-50);
+}
+.cpath__control svg { flex: none; margin-top: 2px; }
+@media (max-width: 960px) {
+  .cpath { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .cpath__step { padding: 0 0 0 52px; }
+  .cpath__marker { position: absolute; left: 0; top: 0; }
+  .cpath__step::before, .cpath__step:first-child::before { top: 32px; bottom: -22px; left: 15px; right: auto; width: 2px; height: auto; }
+  .cpath__step:last-child::before { display: none; }
+  .cpath__title { margin-top: 4px; }
+}
+
+/* ── Systems and data connectivity ─────── */
+.sys__group { margin: 32px 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sys__group:first-child { margin-top: 0; }
+.sys__erps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.sys__data { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sys__tile {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px dashed var(--line-strong); border-radius: 14px;
+}
+.sys__tile strong { display: block; font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.sys__tile small  { display: block; margin-top: 3px; font-size: 13.5px; color: var(--text); }
+.sys__tile em     { display: block; margin-top: 8px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+.sys__mono {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 44px; height: 44px; border-radius: 10px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; color: #fff; background: var(--navy-900);
+}
+.sys__mono--icon { color: var(--blue-600); background: var(--blue-50); }
+.sys__today {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 9px; border-radius: 6px;
+  font-size: 12.5px; font-weight: 600; color: var(--green-text); background: var(--green-bg);
+}
+.sys__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.sys__chip { padding: 8px 14px; border: 1px dashed var(--line-strong); border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--ink); background: var(--surface); }
+.sys__chip--lg { padding: 10px 16px; font-size: 15px; font-weight: 600; }
+.sys__chip--sm { padding: 6px 12px; font-size: 13px; color: var(--text); }
+.sys__flow {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-top: 36px; padding: 16px;
+  background: var(--surface-alt); border: 1px solid var(--line); border-radius: 14px;
+}
+.sys__flow li { display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; color: var(--ink); }
+.sys__flow li:not(:last-child)::after { content: '→'; color: var(--muted); }
+.sys__flow li { padding: 0; }
+.sys__flow li::before { content: none; }
+.sys__core { padding: 4px 10px; border-radius: 8px; color: #fff; background: var(--navy-900); }
+.sys__formats { max-width: 620px; margin-top: 28px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.sys__formats-title { margin-bottom: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sys__formats li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 14px; }
+.sys__formats li + li { margin-top: 6px; }
+.sys__formats li svg { color: var(--green); }
+.sys__formats strong { color: var(--ink); font-weight: 600; }
+.sys__formats span { color: var(--muted); }
+.sys__formats-note { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.sys__disclaimer { max-width: 760px; margin-top: 16px; font-size: 12px; color: var(--muted); }
+.sys__evaluated { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.sys--compact { text-align: center; }
+.sys--compact .sys__chips { justify-content: center; }
+.sys--compact .sys__formats, .sys--compact .sys__disclaimer { margin-left: auto; margin-right: auto; text-align: left; }
+.sys--compact .sys__disclaimer { text-align: center; }
+@media (max-width: 1000px) { .sys__erps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px)  { .sys__data { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px)  {
+  .sys__erps { grid-template-columns: minmax(0, 1fr); }
+  .sys__flow { flex-direction: column; align-items: flex-start; }
+  .sys__flow li:not(:last-child)::after { content: '↓'; }
+}
+
+/* ── Concept visual inside a solution's scope section ── */
+.scope-concept { max-width: 1000px; margin: 56px auto 0; }
+.scope-concept .preview { margin-top: 18px; }

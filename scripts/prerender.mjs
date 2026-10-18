@@ -9,9 +9,15 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const serverDir = path.join(root, 'dist-server');
 
-const { render, PAGES, NOT_FOUND, SITE_URL } = await import(
+const { render, PAGES, NOT_FOUND, SITE_URL, PRIVACY_POLICY_APPROVED, PRIVACY_POLICY_EFFECTIVE_DATE } = await import(
   pathToFileURL(path.join(serverDir, 'entry-server.js')).href
 );
+
+// The published Privacy Policy must carry its real effective date in production. Preview
+// builds may show it as pending.
+if (process.env.VERCEL_ENV === 'production' && PRIVACY_POLICY_APPROVED && !PRIVACY_POLICY_EFFECTIVE_DATE) {
+  throw new Error('prerender: set PRIVACY_POLICY_EFFECTIVE_DATE in src/config/site.js before a production build');
+}
 
 let template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 

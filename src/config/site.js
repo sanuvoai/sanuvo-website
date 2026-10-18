@@ -8,10 +8,15 @@ export const CONTACT_PHONE_TEL = 'tel:+12138769771';
 // and sitemap.xml. If left empty the build emits none of them.
 export const SITE_URL = 'https://sanuvoai.com';
 
-// The Privacy Policy is not in this repository until it has passed legal review. While
-// this is false nothing links to /privacy and it is not prerendered. To publish: add the
-// reviewed page as src/pages/Privacy.jsx, add its route in src/App.jsx, then set this to true.
-export const PRIVACY_POLICY_APPROVED = false;
+// The Privacy Policy (src/pages/Privacy.jsx) is published only once the owner approves its
+// content. While this is false there is no /privacy route, nothing links to it, and it is
+// not prerendered or listed in sitemap.xml.
+export const PRIVACY_POLICY_APPROVED = true;
+
+// Set to the actual publication date (e.g. 'October 20, 2026') before the production launch,
+// and update it whenever the policy content changes. While empty the page shows the date as
+// pending, and a Vercel production build fails (scripts/prerender.mjs).
+export const PRIVACY_POLICY_EFFECTIVE_DATE = '';
 
 export const NAV_LINKS = [
   { label: 'Platform',       to: '/platform'       },

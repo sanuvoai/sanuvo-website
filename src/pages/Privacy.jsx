@@ -87,6 +87,7 @@ export default function Privacy() {
 
             <h2>5. Information Sharing</h2>
             <p>Sanuvo does not sell personal information collected through website-related business inquiries.</p>
+            <p>Sanuvo does not sell personal information or share personal information for targeted advertising.</p>
             <p>
               We may use service providers to support website hosting, scheduling, and business communications.
               These providers may process information as necessary to provide their services.

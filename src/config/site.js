@@ -16,7 +16,7 @@ export const PRIVACY_POLICY_APPROVED = true;
 // Set to the actual publication date (e.g. 'October 20, 2026') before the production launch,
 // and update it whenever the policy content changes. While empty the page shows the date as
 // pending, and a Vercel production build fails (scripts/prerender.mjs).
-export const PRIVACY_POLICY_EFFECTIVE_DATE = '';
+export const PRIVACY_POLICY_EFFECTIVE_DATE = 'October 18, 2026';
 
 export const NAV_LINKS = [
   { label: 'Platform',       to: '/platform'       },

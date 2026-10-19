@@ -1,5 +1,5 @@
 // Single source of truth for site-wide links and labels.
-export const BOOKING_URL = 'https://calendly.com/sanuvo-ai';
+export const BOOKING_URL = 'https://calendly.com/sidaty-sanuvoai/30min';
 export const CONTACT_EMAIL = 'sidaty@sanuvoai.com';
 export const CONTACT_PHONE = '(213) 876-9771';
 export const CONTACT_PHONE_TEL = 'tel:+12138769771';
